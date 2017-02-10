@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Spring Tutorial</title>
+</head>
+<body>
+
+    <div class="container">
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Navigate <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" th:href="@{/}">Home</a></li> <!--Link to index-->
+                                <li><a href="#" th:href="@{/products}">View All</a></li> <!--Link to product.html-->
+                                <li><a href="#"  th:href="@{/product/new}">Add New</a></li> <!--Link to productform.html-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head lang="en">
+
+    <title>Home</title>
+
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+
+</head>
+<body>
+    <div th:include="fragments/header :: header"></div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div th:if="${not #lists.isEmpty(products)}">
+                <div class="row text-center">
+                <h2>All of our products</h2>
+                    <div class="row">
+                        <div th:each="product : @{products}">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="..." alt="..."/>
+                                    <div class="caption">
+                                        <h3>Green Shirt</h3>
+                                        <p>...</p>
+                                        <p><a href="#" class="btn btn-primary" role="button">View More</a> <a href="#" class="btn btn-primary" role="button">Remove</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:include="fragments/footer :: foot"></div>
+</body>
+</html>
