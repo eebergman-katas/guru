@@ -15,17 +15,24 @@
             <div th:if="${not #lists.isEmpty(products)}">
                 <div class="row text-center">
                 <h2>All of our products</h2>
-                    <div class="row">
-                        <div th:each="product : @{products}">
-                            <div class="col-sm-6 col-md-4">
+                    <div th:each="product : ${products}">
+                        <!--<div class="row">-->
+                            <div class="col-xs-12 col-sm-6 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="..." alt="..."/>
+                                    <img th:src="@{${product.imageUrl}}"/>
                                     <div class="caption">
-                                        <h3>Green Shirt</h3>
-                                        <p>...</p>
-                                        <p><a href="#" class="btn btn-primary" role="button">View More</a> <a href="#" class="btn btn-primary" role="button">Remove</a></p>
+                                        <h3 th:text="${product.description}">Description</h3>
+                                        <p th:text="${product.price}">...</p>
+                                        <p class="row">
+                                            <span class="col-xs-12 col-sm-6">
+                                                <a href="#" th:href="${'/product/' + product.id}" class="btn btn-primary btn-block" role="button">View More</a>
+                                            </span>
+                                            <span class="col-xs-12 col-sm-6">
+                                                <a href="#" th:href="${'/product/delete/' + product.id}" class="btn btn-primary btn-block" role="button">Remove</a>
+                                            </span>
+                                        </p>
                                     </div>
-                                </div>
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>

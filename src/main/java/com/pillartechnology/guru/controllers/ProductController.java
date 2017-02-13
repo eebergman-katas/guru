@@ -24,6 +24,7 @@ public class ProductController {
         this.productService = productService;
     }
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String welcome(Model model) {
         model.addAttribute("products", productService.listAllProducts());
@@ -39,7 +40,7 @@ public class ProductController {
     @RequestMapping(value = "product", method = RequestMethod.POST)
     public String saveProduct(Product product) {
         productService.saveProduct(product);
-        return "redirect:/product" + product.getId();
+        return "redirect:/";
     }
 
     //read by id

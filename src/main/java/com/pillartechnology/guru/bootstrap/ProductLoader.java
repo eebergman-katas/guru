@@ -30,7 +30,7 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         Product shirt = new Product();
         shirt.setDescription("Green Shirt");
         shirt.setPrice(new BigDecimal("18.95"));
-        shirt.setImageUrl("http://www.iconsdb.com/icons/preview/green/t-shirt-xxl.png");
+        shirt.setImageUrl("https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg");
         shirt.setProductId("235268845711068308");
         productRepository.save(shirt);
 
@@ -40,7 +40,7 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         Product mug = new Product();
         mug.setDescription("Green Mug");
         mug.setPrice(new BigDecimal("3.50"));
-        mug.setImageUrl("../static/images/greenmug.jpeg");
+        mug.setImageUrl("https://cdn.pixabay.com/photo/2014/11/09/19/45/mug-524103_1280.png");
         mug.setProductId("2352688");
         productRepository.save(mug);
 
